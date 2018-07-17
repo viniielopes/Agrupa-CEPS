@@ -25,7 +25,7 @@ class App extends React.Component<IProps> {
       <div>
         <div className="container">
           <div className="row justify-content-center">
-            <p className="mb-0 font-weight-bold col-1 align-self-center">
+            <p className="mb-0 font-weight-bold col-auto align-self-center">
               CEP:
             </p>
             <input
