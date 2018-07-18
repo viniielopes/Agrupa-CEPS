@@ -8,4 +8,5 @@ export interface IinformacoesCEP {
   logradouro: string;
   uf: string;
   unidade: string;
+  erro: boolean | undefined;
 }
