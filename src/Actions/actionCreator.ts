@@ -1,5 +1,4 @@
 import { Dispatch } from "redux";
-// import { IinformacoesCEP } from "../Interfaces/IinformacoesCEP";
 
 export interface IVerificarInformacao {
   type: string;
