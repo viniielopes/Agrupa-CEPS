@@ -1,9 +1,10 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
-import { actionBUSCARCEP } from "../src/Actions/actionCreator";
+import { actionBUSCARCEP } from "./Actions/actionCreator";
 import CardGroup from "./components/CardGroup";
 import { IinformacoesCEP } from "./Interfaces/IinformacoesCEP";
+import { IallReducers } from "./Interfaces/Reducers";
 
 interface IProps extends IDispatchProps {
   CEP?: string;
@@ -54,15 +55,16 @@ class App extends React.Component<IProps> {
     );
   }
 
-  private clickBuscar() {
+  private clickBuscar(evento: React.MouseEvent) {
+    evento.preventDefault();
     const CEP = this.campoCEPPesquisa.current as HTMLInputElement;
     this.props.BUSCARCEP(parseInt(CEP.value, 0));
   }
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: IallReducers) => {
   return {
-    informacoesCEP: state
+    informacoesCEP: state.appReducer
   };
 };
 
